@@ -52,3 +52,58 @@ button {
 button:hover {
   background: #c94a22;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #e3e3e3;
+  font-family: Georgia, serif;
+}
+
+nav a:hover {
+  color: #e8572a;
+}
+
+.letters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 80vw;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  max-width: 60vw;
+  margin-top: 2rem;
+}
+
+ul li {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  width: calc(50% - 0.5rem);
+}
+
+ul li:hover {
+  border-color: #e8572a;
+  color: #e8572a;
+}
