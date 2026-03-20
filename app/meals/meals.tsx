@@ -3,11 +3,14 @@ import { useState } from "react";
 export function Meals() {
     const [query, setQuery] = useState("");
 
-    const handleRandom = () => {
-        const meals = ["Pizza", "Sushi", "Tacos", "Ramen", "Burger", "Pasta", "Salad", "Curry"];
-        setQuery(meals[Math.floor(Math.random() * meals.length)]);
-    };
+    const [meal, setMeal] = useState(null)
 
+    const handleRandom = async () => {
+        const res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
+        const data = await res.json();
+        const meal = data.meals[0];
+        setMeal(data.meals[0])
+    };
     return (
         <div>
             <h1>What do you want to eat today?</h1>
@@ -18,6 +21,7 @@ export function Meals() {
                 onChange={(e) => setQuery(e.target.value)}
             />
             <button onClick={handleRandom}>Get a random meal</button>
+            {meal && <p>{meal.strMeal}</p>}
         </div>
     );
 }
