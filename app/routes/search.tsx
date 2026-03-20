@@ -18,7 +18,7 @@ export default function Search() {
     <div>
       <h1>Search by letter</h1>
 
-      <div>
+      <div className="letters">
         {letters.map((letter) => (
           <button key={letter} onClick={() => searchByLetter(letter)}>
             {letter.toUpperCase()}
