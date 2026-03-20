@@ -1,9 +1,10 @@
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 
 export default function MealDetail() {
   const { id } = useParams();
   const [meal, setMeal] = useState<any>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -20,6 +21,8 @@ export default function MealDetail() {
 
   return (
     <div>
+      <button onClick={() => navigate(-1)}>← Back</button>
+
       <h1>{meal.strMeal}</h1>
       <img src={`${meal.strMealThumb}/medium`} alt={meal.strMeal} />
       <div className="meal-meta">
@@ -33,6 +36,15 @@ export default function MealDetail() {
           <li key={ing.name}>{ing.measure} {ing.name}</li>
         ))}
       </ul>
+
+      <h2>Instructions</h2>
+      <p>{meal.strInstructions}</p>
+
+      {meal.strYoutube && (
+        <a href={meal.strYoutube} target="_blank" rel="noreferrer">
+          ▶ Watch on YouTube
+        </a>
+      )}
     </div>
   );
 }
