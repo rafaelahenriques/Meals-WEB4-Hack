@@ -41,8 +41,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+import { Link } from "react-router";
+
 export default function App() {
-  return <Outlet />;
+  return (
+    <>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/search">Search</Link>
+      </nav>
+      <Outlet />
+    </>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
