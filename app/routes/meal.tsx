@@ -1,0 +1,35 @@
+import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+
+export default function MealDetail() {
+  const { id } = useParams();
+  const [meal, setMeal] = useState<any>(null);
+
+  useEffect(() => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+      .then((res) => res.json())
+      .then((data) => setMeal(data.meals[0]));
+  }, [id]);
+
+  if (!meal) return <p>Loading...</p>;
+
+  const ingredients = Array.from({ length: 20 }, (_, i) => ({
+    name: meal[`strIngredient${i + 1}`],
+    measure: meal[`strMeasure${i + 1}`],
+  })).filter((ing) => ing.name);
+
+  return (
+    <div>
+      <h1>{meal.strMeal}</h1>
+      <img src={`${meal.strMealThumb}/medium`} alt={meal.strMeal} />
+      <p> {meal.strArea}</p>
+      <p> {meal.strCategory}</p>
+      <h2>Ingredients</h2>
+      <ul>
+        {ingredients.map((ing) => (
+          <li key={ing.name}>{ing.measure} {ing.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}

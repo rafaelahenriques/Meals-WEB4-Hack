@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 export function Meals() {
     const [query, setQuery] = useState("");
@@ -28,7 +29,9 @@ export function Meals() {
             <button onClick={handleRandom}>Get a random meal</button>
             {meal && (
                 <div>
-                    <p style={{ fontSize: "1.5rem" }}>{meal.strMeal}</p>
+                    <Link to={`/meal/${meal.idMeal}`}>
+  <p style={{ fontSize: "1.5rem" }}>{meal.strMeal}</p>
+</Link>
                     <img src={`${meal.strMealThumb}/medium`} alt={meal.strMeal} />
                 </div>
             )}

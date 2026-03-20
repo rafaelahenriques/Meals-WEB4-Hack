@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router";
 const letters = "abcdefghijklmnopqrstuvwxyz".split("");
 
 export default function Search() {
@@ -30,7 +30,9 @@ export default function Search() {
 
       <ul>
         {meals.map((meal: any) => (
-          <li key={meal.idMeal}>{meal.strMeal}</li>
+          <li key={meal.idMeal}>
+  <Link to={`/meal/${meal.idMeal}`}>{meal.strMeal}</Link>
+</li>
         ))}
       </ul>
     </div>
