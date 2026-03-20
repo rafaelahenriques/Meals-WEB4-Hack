@@ -21,7 +21,7 @@ export default function MealDetail() {
 
   return (
     <div>
-      <button onClick={() => navigate(-1)}>← Back</button>
+      <button className="back-btn" onClick={() => navigate(-1)}>← Back</button>
 
       <h1>{meal.strMeal}</h1>
       <img src={`${meal.strMealThumb}/medium`} alt={meal.strMeal} />
@@ -38,13 +38,11 @@ export default function MealDetail() {
       </ul>
 
       <h2>Instructions</h2>
-      <p>{meal.strInstructions}</p>
+      <p className="instructions">{meal.strInstructions}</p>
 
-      {meal.strYoutube && (
-        <a href={meal.strYoutube} target="_blank" rel="noreferrer">
-          ▶ Watch on YouTube
-        </a>
-      )}
+      <a className="youtube-btn" href={meal.strYoutube} target="_blank" rel="noreferrer">
+        ▶ Watch on YouTube
+      </a>
     </div>
   );
 }

@@ -102,7 +102,7 @@ ul {
   width: 100%;
   max-width: 60vw;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 ul li {
@@ -140,4 +140,30 @@ a :hover {
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+}
+
+.back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.instructions {
+  max-width: 80vw;
+  margin-bottom: 2rem;
+}
+
+.youtube-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #e8572a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 5rem;
+}
+
+
+.youtube-btn:hover {
+  background: #c94a22;
 }
