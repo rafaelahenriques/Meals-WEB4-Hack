@@ -21,7 +21,12 @@ export function Meals() {
                 onChange={(e) => setQuery(e.target.value)}
             />
             <button onClick={handleRandom}>Get a random meal</button>
-            {meal && <p>{meal.strMeal}</p>}
+            {meal && (
+                <div>
+                    <p style={{ fontSize: "1.5rem" }}>{meal.strMeal}</p>
+                    <img src={`${meal.strMealThumb}/medium`} alt={meal.strMeal} />
+                </div>
+            )}
         </div>
     );
 }
