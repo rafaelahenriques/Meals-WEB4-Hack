@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 export function Meals() {
     const [query, setQuery] = useState("");
@@ -18,10 +19,22 @@ export function Meals() {
                 type="text"
                 placeholder="Search for a meal…"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={async (e) => {
+                    setQuery(e.target.value);
+                    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${e.target.value}`);
+                    const data = await res.json();
+                    if (data.meals) setMeal(data.meals[0]);
+                }}
             />
             <button onClick={handleRandom}>Get a random meal</button>
-            {meal && <p>{meal.strMeal}</p>}
+            {meal && (
+                <div className="randomMeal">
+                    <Link to={`/meal/${meal.idMeal}`}>
+  <p style={{ fontSize: "1.5rem" }}>{meal.strMeal}</p>
+</Link>
+                    <img src={`${meal.strMealThumb}/medium`} alt={meal.strMeal} />
+                </div>
+            )}
         </div>
     );
 }

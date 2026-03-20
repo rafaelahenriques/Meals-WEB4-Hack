@@ -12,4 +12,158 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
+  font-family: 'Segoe UI',
+  Tahoma,
+  Geneva,
+  Verdana,
+  sans-serif;
+}
+
+
+h1 {
+  font-size: 3rem;
+  font-family: Georgia, serif;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: Georgia, serif;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+input {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  width: 300px;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #e8572a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c94a22;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #e3e3e3;
+  font-family: Georgia, serif;
+}
+
+nav a:hover {
+  color: #e8572a;
+}
+
+.letters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 80vw;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  max-width: 60vw;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+ul li {
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  width: calc(50% - 0.5rem);
+}
+
+ul li:hover {
+  border-color: #e8572a;
+  color: #e8572a;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+a :hover {
+  text-decoration: underline;
+}
+
+.randomMeal {
+  margin-bottom: 2rem;
+}
+
+.meal-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.instructions {
+  max-width: 80vw;
+  margin-bottom: 2rem;
+}
+
+.youtube-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #e8572a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 5rem;
+}
+
+
+.youtube-btn:hover {
+  background: #c94a22;
 }
