@@ -13,3 +13,42 @@ body {
     color-scheme: dark;
   }
 }
+
+
+h1 {
+  font-size: 3rem;
+  font-family: Georgia, serif;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+input {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  width: 300px;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #e8572a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c94a22;
+}
