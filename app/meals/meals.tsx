@@ -28,7 +28,7 @@ export function Meals() {
             />
             <button onClick={handleRandom}>Get a random meal</button>
             {meal && (
-                <div>
+                <div className="randomMeal">
                     <Link to={`/meal/${meal.idMeal}`}>
   <p style={{ fontSize: "1.5rem" }}>{meal.strMeal}</p>
 </Link>

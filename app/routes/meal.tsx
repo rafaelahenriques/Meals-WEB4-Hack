@@ -22,8 +22,11 @@ export default function MealDetail() {
     <div>
       <h1>{meal.strMeal}</h1>
       <img src={`${meal.strMealThumb}/medium`} alt={meal.strMeal} />
-      <p> {meal.strArea}</p>
-      <p> {meal.strCategory}</p>
+      <div className="meal-meta">
+        <span>{meal.strArea}</span>
+        <span>·</span>
+        <span>{meal.strCategory}</span>
+      </div>
       <h2>Ingredients</h2>
       <ul>
         {ingredients.map((ing) => (
